@@ -1,0 +1,28 @@
+body {
+    color: whitesmoke;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    background-color: #121212;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+img {
+    display: block;
+    margin-top: 90px;
+    margin-left: auto;
+    margin-right: auto;
+
+    max-width: 100%;
+    width: 330px;
+    height: auto;
+
+    transition: 0.5s;
+}
+
+img:hover {
+    transform: scale(1.10);
+}

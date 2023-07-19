@@ -1,0 +1,97 @@
+body {
+    color: whitesmoke;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    background-color: #121212;
+    margin: 0;
+}
+
+#project_name, #current_directory {
+    text-align: center;
+}
+
+#container {
+    min-width: 320px;
+    width: 45%;
+    
+    position: relative;
+    top: 55px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.box {
+    position: relative;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    
+    margin-top: 7px;
+
+    background-color: #1F1F1F;
+    border-radius: 10px;
+
+    min-width: 320px;
+    width: 100%;
+
+    min-height: 55px;
+    height: 40px;
+}
+
+#back_button {
+    position: absolute;
+    top: -50px;
+
+    width: 150px;
+    height: 40px;
+
+    background-color: #252525;
+    color: white;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    text-align: center;
+    font-size: 16px;
+}
+
+#back_button:hover {
+    background-color: #303030;
+    border-radius: 10px;
+}
+
+.file_icon, .folder_icon {
+    margin: 15px;
+}
+
+.file_link, .folder_link {
+    margin: -5px;
+
+    color: #d4d4d4;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.file_link:hover, .folder_link:hover {
+    color: #9F9F9F;
+    text-decoration: none;
+}
+
+.file_size {
+    position: absolute;
+    right: 55px;
+
+    color: #9F9F9F;
+}
+
+.edit_button {
+    position: absolute;
+    right: 15px;
+    top: 35%;
+
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    cursor: pointer;
+}
