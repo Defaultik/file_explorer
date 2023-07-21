@@ -8,6 +8,16 @@
     </head>
 
     <body>
+        <!-- 
+            TODO:
+                    deletion-confirm menu
+                    rename function
+                    to do my own sort-files mechanic
+                    to do white effect on the background of list
+                    redesign header
+                    redesign 'Back' button
+         -->
+
         <h1 id="project_name">Simple File Explorer</h1>
 
         <?php
@@ -46,7 +56,7 @@
                 $file_func = "'" . $file . "'";
                 $file_func = htmlspecialchars($file_func);
 
-                echo "<button onclick='openDropdown($file_func)' class='file_manage_button' type='button'>";
+                echo "<button onclick='open_dropdown($file_func)' class='file_manage_button' type='button'>";
                 echo "<img src=img/rsz_more.png>";
                 echo "</button>";
 
@@ -61,7 +71,7 @@
         ?>
 
        <script>
-            function openDropdown(file) {
+            function open_dropdown(file) {
                 var file_name = "delete_" + file
                 var specific_file = document.querySelector("[data-type='" + file_name + "']");
 

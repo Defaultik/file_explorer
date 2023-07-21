@@ -108,8 +108,14 @@ body {
     background-color: #252525;
     border-radius: 10px;
 
+    transition: 0.3s;
+
     width: 35px;
     height: 35px;
+}
+
+#dropdown_links:hover {
+    background-color: #303030;
 }
 
 [data-type^="delete_"] {
