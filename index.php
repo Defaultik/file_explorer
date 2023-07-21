@@ -45,11 +45,12 @@
                 
                 $file_func = "'" . $file . "'";
                 $file_func = htmlspecialchars($file_func);
+
                 echo "<button onclick='openDropdown($file_func)' class='file_manage_button' type='button'>";
                 echo "<img src=img/rsz_more.png>";
                 echo "</button>";
 
-                echo "<div data-type='delete_" . $file . "' id='dropdown_links'>";
+                echo "<div onclick='file_delete($file_func)' data-type='delete_" . $file . "' id='dropdown_links'>";
                 echo "<img src=img/rsz_bin.png>";
                 echo "</div>";
 
@@ -57,11 +58,33 @@
             }
 
             echo "</div>";
+        ?>
 
-            function delete_file($file) {
-                echo $file;
+       <script>
+            function openDropdown(file) {
+                var file_name = "delete_" + file
+                var specific_file = document.querySelector("[data-type='" + file_name + "']");
+
+                // if (specific_file.style.display === "none") { // buggy, works only on second click
+                if (window.getComputedStyle(specific_file, null).getPropertyValue("display") === 'none') {
+                    specific_file.style.display = "flex";
+                } else {
+                    specific_file.style.display = "none";
+                }
             }
-            
+
+            function file_delete(file) {
+                let xhr = new XMLHttpRequest();
+
+                xhr.open("POST", "file_delete.php");
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.send("file=" + encodeURIComponent(file));
+
+                location.reload()
+            }
+        </script>
+
+        <?php
             function size_units($bytes) {
                 if ($bytes >= 1073741824) {
                     $bytes = number_format($bytes / 1073741824, 2) . " GB";
@@ -80,19 +103,5 @@
                 return $bytes;
             }
         ?>
-
-       <script>
-            function openDropdown(file) {
-                var file_name = "delete_" + file
-                var specific_file = document.querySelector("[data-type='" + file_name + "']");
-
-                // if (specific_file.style.display === "none") { // buggy, works only on second click
-                if (window.getComputedStyle(specific_file, null).getPropertyValue("display") === 'none') {
-                    specific_file.style.display = "flex";
-                } else {
-                    specific_file.style.display = "none";
-                }
-            }
-        </script>
     </body>
 </html>
