@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    
+    if ((empty($_SESSION["username"]))) {
+        header("Location: /file_explorer/login_panel.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,13 +26,12 @@
                     redesign 'Back' button
          -->
 
-        <h1 id="project_name">Simple File Explorer</h1>
 
         <?php
+            if (!empty($_SESSION["username"])) {
+            echo "<h1 id='project_name'>Simple File Explorer</h1>";
             echo "<h4 id='current_directory'>file_explorer/" . $_GET["dir"] . "</h4>";
-        ?>
-
-        <?php
+       
             if (isset($_GET["dir"]) !== true) {
                 header("Location: /file_explorer/?dir=");
             }
@@ -68,6 +75,7 @@
             }
 
             echo "</div>";
+            }
         ?>
 
        <script>
