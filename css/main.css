@@ -6,36 +6,14 @@ body {
     margin: 0;
 }
 
-#project_name, #current_directory {
-    text-align: center;
-}
-
 #container {
     min-width: 320px;
     width: 45%;
     
     position: relative;
-    top: 55px;
+    top: 100px;
     left: 50%;
     transform: translate(-50%);
-}
-
-.box {
-    position: relative;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    
-    margin-top: 7px;
-
-    background-color: #1F1F1F;
-    border-radius: 10px;
-
-    min-width: 320px;
-    width: 100%;
-
-    min-height: 55px;
-    height: 40px;
 }
 
 #back_button {
@@ -60,6 +38,30 @@ body {
 #back_button:hover {
     background-color: #303030;
     border-radius: 10px;
+}
+
+#current_directory {
+    position: absolute;
+    top: -62px;
+    margin-left: 160px;
+}
+
+.box {
+    position: relative;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    
+    margin-top: 7px;
+
+    background-color: #1F1F1F;
+    border-radius: 10px;
+
+    min-width: 320px;
+    width: 100%;
+
+    min-height: 55px;
+    height: 40px;
 }
 
 .file_icon, .folder_icon {
@@ -115,7 +117,7 @@ body {
 }
 
 #dropdown_links:hover {
-    background-color: #303030;
+    background-color: #FF2B2B;
 }
 
 [data-type^="delete_"] {
